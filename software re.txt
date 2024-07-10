@@ -1,0 +1,18 @@
+i.	Initially the RFID reader is in idle state, waiting for a RFID card to be detected.
+ii.	On reading the RFID card, we will get a UID which consists of 12 characters which is stored in a string using SPI protocol.
+iii.	In which, we will receive the one data bit for 1 clock pulse.
+iv.	Hence, we will receive 12 data bits at 12 clock pulses. 
+v.	We will compare the received UID with the registered UID using an if-else statement.
+vi.	If the received UID is matching with the registered UID then, it will print the UID and the employee details on the serial terminal.
+vii.	Where the serial terminal is set at a baud rate of 9600bps.
+viii.	If the UID is matching, then it will send a string which contains Employee name through Bluetooth using UART protocol.
+ix.	Where, the transfer of data bits takes place at a speed of 9600bps. 
+x.	We need to make sure that both the devices are set to the same baud rate since UART is an asynchronous protocol.
+xi.	Initially, the UART bus is at 1, when the connection is established between the module and the smartphone the bus is set to 0.
+xii.	This indicates that the data transmission is about to start.
+xiii.	Whereas, the receiver buffer at the smartphone is initially 0.
+xiv.	When the data is received in the reciever buffer bit by bit the flag becomes 1.
+xv.	When the reciever flag is set to 1, the data should be read inorder to receive the next byte of data.
+xvi.	The read character should be printed on the Serial Bluetooth terminal.
+xvii.	On receiving the data, if the UID is matching, the employee details are displayed on the Serial Bluetooth terminal app.
+xviii.	On receiving the data, if the UID is not matching, then “Access Denied” message is displayed on the Serial Bluetooth terminal app.
